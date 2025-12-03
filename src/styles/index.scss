@@ -6,6 +6,7 @@
 @import "base/variables"; 
 @import "base/mixins"; 
 @import "base/typography";
+@import "base/animations";
 
 // ===================================
 // 2. COMPONENTS (Reusable UI elements)
@@ -18,4 +19,6 @@
 // 3. SECTIONS AND PAGES (Layout specific)
 // ===================================
 @import "sections/home"; 
+@import "sections/about";
 @import "sections/projects";
+@import "sections/contact";

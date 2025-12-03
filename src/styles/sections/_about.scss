@@ -1,0 +1,83 @@
+// src/styles/sections/_about.scss
+
+.about-section {
+  background-color: white; 
+  border-bottom: 1px solid #eee; 
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  // בדסקטופ: שתי עמודות
+  @include respond-up(md) {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr; 
+    gap: $spacing-xl * 2;
+    align-items: center; 
+  }
+}
+
+.about-content {
+  text-align: right; 
+  
+  .section-title {
+    color: $color-primary;
+    font-size: 2.5rem;
+    border-bottom: 3px solid $color-accent;
+    display: inline-block;
+    padding-bottom: $spacing-xs;
+    margin-bottom: $spacing-xl;
+  }
+  
+  .bio-summary {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: $spacing-lg;
+    font-weight: 500;
+  }
+  
+  .bio-details {
+    line-height: 1.7;
+    margin-bottom: $spacing-xl;
+  }
+
+  .section-subtitle {
+    font-size: 1.5rem;
+    color: $color-text-dark;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-sm;
+    border-right: 4px solid $color-primary; 
+    padding-right: $spacing-xs;
+  }
+}
+
+.expertise-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: $spacing-xl;
+  
+  li {
+    background-color: #f0f7ff; 
+    padding: $spacing-sm;
+    margin-bottom: $spacing-xs;
+    border-right: 4px solid $color-accent;
+    font-weight: 500;
+  }
+}
+
+.about-image-wrapper {
+  @include flex-center;
+  @include respond-down(sm) {
+    display: none;
+  }
+}
+
+.about-photo-placeholder {
+  width: 300px;
+  height: 300px;
+  background-color: $color-text-subtle;
+  border-radius: 50%;
+  border: 8px solid $color-accent;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}

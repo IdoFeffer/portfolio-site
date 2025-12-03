@@ -1,5 +1,4 @@
 import React from 'react';
-// כבר אין צורך ב-Link מ-react-router-dom מאחר שעברנו לאתר עמוד אחד
 import About from './About.jsx'; 
 import Projects from './Projects.jsx';
 import Contact from './Contact.jsx';
@@ -8,11 +7,11 @@ const Home = () => {
   return (
     <div className="home-container">
       
-      {/* 1. INTRO SECTION - החלק העליון והבולט */}
+      {/* 1. INTRO SECTION */}
       <section id="intro" className="intro section-padding"> 
-        <div className="introContent slide-in-left"> {/* קלאס לאנימציה */}
+        <div className="introContent slide-in-left"> 
           
-          <p className="greeting">Hi there, I'm</p> {/* הוספת קלאס לברכה */}
+          <p className="greeting">Hi there, I'm</p> 
 
           <h1 className="title">
             Hello, I'm <span className="highlight name-animate">Ido Feffer</span>
@@ -27,7 +26,6 @@ const Home = () => {
           </p>
           
           <div className="ctaButtons">
-            {/* שימוש ב-a href לניווט עוגן */}
             <a href="#my-projects" className="btn btnPrimary">
               View My Work
             </a>
@@ -39,27 +37,17 @@ const Home = () => {
         </div>
         
         {/* Placeholder for illustration/image */}
-        <div className="introImage bounce-in"> {/* קלאס לאנימציה */}
+        <div className="introImage bounce-in"> 
            <div className="placeholderCircle"></div> 
         </div>
       </section>
 
-      {/* 2. ABOUT SECTION - כפי שהגדרנו */}
+      {/* 2. ABOUT SECTION -  */}
       <section id="about-me" className="about-section section-padding">
         <About /> 
       </section>
       
-      {/* 3. PROJECTS SECTION - כפי שהגדרנו */}
-      <section id="my-projects" className="projects-section section-padding">
-        <Projects /> 
-      </section>
-      
-      {/* 4. CONTACT SECTION - כפי שהגדרנו */}
-      <section id="contact-me" className="contact-section section-padding">
-        <Contact />
-      </section>
-
-      {/* 5. TECH STACK STRIP - רצועת המיומנויות */}
+      {/* 3. TECH STACK STRIP */}
       <section className="techStack section-strip">
         <h3>Technologies I Love</h3>
         <div className="techIcons">
@@ -71,6 +59,17 @@ const Home = () => {
            <span>✉️ Postman</span>
         </div>
       </section>
+
+      {/* 4. PROJECTS SECTION -  */}
+      <section id="my-projects" className="projects-section section-padding">
+        <Projects /> 
+      </section>
+      
+      {/* 5. CONTACT SECTION -  */}
+      <section id="contact-me" className="contact-section section-padding">
+        <Contact />
+      </section>
+
 
     </div>
   );
