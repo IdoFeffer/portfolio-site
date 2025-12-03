@@ -1,0 +1,91 @@
+// ===================================
+// MIXINS FILE
+// This file contains reusable blocks of CSS code that can be included
+// in any SCSS file using the @include directive.
+// ===================================
+
+// Import the global variables for use within the mixins
+@use "variables" as v;
+
+// --------------------------------------------------
+// 1. RESPONSIVE MIXINS (Media Queries)
+// Easily manage responsive design using defined breakpoints.
+// Usage example: @include m.respond-to(md) { ... styles ... }
+// --------------------------------------------------
+
+/**
+ * @mixin respond-to
+ * Creates a media query to apply styles from the given minimum breakpoint upwards (min-width).
+ *
+ * @param {string} $breakpoint - The breakpoint key (e.g., 'sm', 'md', 'lg', 'xl') defined in _variables.scss.
+ */
+@mixin respond-up($breakpoint) {
+  @if map-has-key((sm: v.$breakpoint-sm, md: v.$breakpoint-md, lg: v.$breakpoint-lg, xl: v.$breakpoint-xl), $breakpoint) {
+    $size: map-get((sm: v.$breakpoint-sm, md: v.$breakpoint-md, lg: v.$breakpoint-lg, xl: v.$breakpoint-xl), $breakpoint);
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint name: #{$breakpoint}. Must be sm, md, lg, or xl.";
+  }
+}
+
+/**
+ * @mixin respond-down
+ * Creates a media query to apply styles from the given maximum breakpoint downwards (max-width).
+ *
+ * @param {string} $breakpoint - The breakpoint key (e.g., 'sm', 'md', 'lg', 'xl').
+ */
+@mixin respond-down($breakpoint) {
+  @if map-has-key((sm: v.$breakpoint-sm, md: v.$breakpoint-md, lg: v.$breakpoint-lg, xl: v.$breakpoint-xl), $breakpoint) {
+    $size: map-get((sm: v.$breakpoint-sm, md: v.$breakpoint-md, lg: v.$breakpoint-lg, xl: v.$breakpoint-xl), $breakpoint);
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint name: #{$breakpoint}. Must be sm, md, lg, or xl.";
+  }
+}
+
+
+// --------------------------------------------------
+// 2. FLEXBOX MIXINS
+// Simplify common Flexbox patterns like centering.
+// Usage example: @include m.flex-center;
+// --------------------------------------------------
+
+/**
+ * @mixin flex-center
+ * Centers items horizontally and vertically using Flexbox.
+ */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * @mixin flex-start-center
+ * Aligns items to the start (horizontal) and centers them vertically.
+ */
+@mixin flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+// --------------------------------------------------
+// 3. TRANSITION MIXINS
+// Standardize transition speeds for consistency.
+// Usage example: @include m.transition-smooth;
+// --------------------------------------------------
+
+/**
+ * @mixin transition-smooth
+ * Applies a smooth transition to all animatable properties.
+ * Useful for hover effects and state changes.
+ */
+@mixin transition-smooth {
+  transition: all 0.3s ease-in-out;
+}

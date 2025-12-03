@@ -1,0 +1,54 @@
+// ===================================
+// 1. COLORS VARIABLES
+// ===================================
+
+// Primary and Accent Colors
+$color-primary: #007bff;     // Bright Blue (Used for main buttons, links, and accents)
+$color-accent: #61dafb;      // React Blue/Cyan (Can be used for tech highlights)
+
+// Background and Text Colors (Light Theme)
+$color-background-light: #ffffff; // Main page background
+$color-background-secondary: #f8f9fa; // Used for cards or sections
+$color-text-dark: #212529;         // Main body text color
+$color-text-subtle: #6c757d;       // Subtle, secondary text
+
+// Background and Text Colors (Dark Theme components - e.g., Header/Footer)
+$color-background-dark: #343a40; // Dark background
+$color-text-light: #f8f9fa;       // Light text on dark backgrounds
+
+// System/Feedback Colors
+$color-success: #28a745;
+$color-danger: #dc3545;
+
+
+// ===================================
+// 2. TYPOGRAPHY VARIABLES
+// ===================================
+
+$font-family-primary: 'Roboto', sans-serif;
+$font-family-secondary: 'Merriweather', serif; // Optional font for headers/titles
+
+// Font Sizes (using rem for scalability)
+$font-size-base: 1rem; 
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.75rem;
+
+// ===================================
+// 3. SPACING VARIABLES
+// ===================================
+
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem;  // 8px
+$spacing-md: 1rem;    // 16px (Base)
+$spacing-lg: 1.5rem;  // 24px
+$spacing-xl: 3rem;    // 48px
+
+// ===================================
+// 4. BREAKPOINTS (For Responsive Design)
+// ===================================
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
