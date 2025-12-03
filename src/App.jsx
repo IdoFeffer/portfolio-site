@@ -36,13 +36,12 @@
 
 import React from 'react';
 
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
-import Home from './components/Home.jsx';
+import Header from './cmps/Header.jsx';
+import Footer from './cmps/Footer.jsx';
+import Home from './cmps/Home.jsx';
 
 function App() {
   return (
-    // ⚠️ מוחקים את ה-Router
     <div className="portfolio-container">
       <Header />
       <main>
